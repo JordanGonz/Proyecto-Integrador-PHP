@@ -1,0 +1,41 @@
+/* ***********************************************************************************************
+Reemplacen la clase .navbar por la etiqueta, clase o ID del contenedor de sus botoneras.
+*********************************************************************************************** */
+
+.navbar ul li a{
+    position: relative;
+}
+
+.navbar ul li a::before,
+.navbar ul li a::after
+{
+    content: '';
+    border-bottom: 2px solid red;
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.navbar ul li a::before{
+    bottom: -5px;
+    width: 90%;
+    right: 0;
+}
+
+.navbar ul li a::after{
+    bottom: -10px;
+    width: 60%;
+    left: 0;
+}
+
+.navbar ul li a.activo::before,
+.navbar ul li a:hover::before{
+    opacity: 1;
+    width: 70%;
+}
+
+.navbar ul li a.activo::after,
+.navbar ul li a:hover::after{
+    opacity: 1;
+    width: 40%;
+}
